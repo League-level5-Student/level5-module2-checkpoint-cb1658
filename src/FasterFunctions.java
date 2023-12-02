@@ -5,6 +5,31 @@ public class FasterFunctions {
 		long startTime = System.currentTimeMillis();
 		//Your Code Here
 		
+		WorkQueue wq = new WorkQueue();
+		
+		/* workQueue.addJob(() -> {
+				stuff goes in here
+			}); */
+		
+		
+		wq.addJob(() -> {
+			SlowFunctions.ackermann(3, 14);
+			});
+		
+		wq.addJob(() -> {
+			SlowFunctions.millionsOfSqrts();
+		});
+		
+		wq.addJob(() -> {
+			SlowFunctions.slowSortLargeArray();
+		});
+		
+		wq.shutdown();
+		
+		
+		
+		
+		
 		
 		
 		
